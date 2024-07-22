@@ -1,19 +1,19 @@
 package com.example.pessoa.repository;
 
+import com.example.pessoa.exceptions.BDException;
 
-import br.com.dbc.vemser.varejodelivros.exceptions.BancoDeDadosException;
-
+import java.sql.SQLException;
 import java.util.List;
 
 public interface Repository<CHAVE, OBJETO> {
 
-    OBJETO adicionar(OBJETO object) throws BancoDeDadosException;
+    OBJETO adicionar(OBJETO object) throws SQLException;
 
-    boolean remover(CHAVE id) throws BancoDeDadosException;
+    boolean remover(CHAVE id) throws BDException;
 
-    OBJETO editar(CHAVE id, OBJETO objeto) throws BancoDeDadosException;
+    OBJETO editar(CHAVE id, OBJETO objeto) throws BDException;
 
-    List<OBJETO> listar() throws BancoDeDadosException;
+    List<OBJETO> listar() throws BDException;
 
-    OBJETO listarPorId(CHAVE id) throws BancoDeDadosException;
+    OBJETO listarPorId(CHAVE id) throws BDException;
 }
