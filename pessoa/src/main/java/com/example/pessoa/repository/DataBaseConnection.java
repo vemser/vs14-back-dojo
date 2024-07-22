@@ -12,6 +12,8 @@ import java.sql.SQLException;
 @Component
 @Slf4j
 public class DataBaseConnection {
+
+    private Connection con;
     @Value("${spring.datasource.url}")
     private String url;
 
@@ -22,9 +24,13 @@ public class DataBaseConnection {
     private String password;
 
     @Bean
-    public Connection getConnection() throws Exception {
-        Connection connection = DriverManager.getConnection(url, user, password );
+    public Connection startConnection() throws Exception {
+        this.con = DriverManager.getConnection(url, user, password);
         //log.info("Conexão bem-sucedida");
-        return connection;
+        return con;
+    }
+
+    public Connection getConnection() {
+        return this.con;
     }
 }

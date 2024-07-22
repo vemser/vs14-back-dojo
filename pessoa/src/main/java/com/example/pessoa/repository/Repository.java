@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface Repository<CHAVE, OBJETO> {
 
-    OBJETO adicionar(OBJETO object) throws SQLException;
+    OBJETO adicionar(OBJETO object) throws Exception;
 
     boolean remover(CHAVE id) throws BDException;
 

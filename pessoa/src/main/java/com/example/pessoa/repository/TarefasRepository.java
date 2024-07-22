@@ -15,13 +15,11 @@ public class TarefasRepository implements com.example.pessoa.repository.Reposito
 
     private final DataBaseConnection connection;
 
-    public TarefasRepository(DataBaseConnection connection) {
-        this.connection = connection;
-    }
 
     @Override
-    public Tarefas adicionar(Tarefas tarefas) throws SQLException {
-
+    public Tarefas adicionar(Tarefas tarefas) throws Exception {
+        connection.getConnection();
+        return null;
     }
 
     @Override
