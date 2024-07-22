@@ -3,13 +3,15 @@ package com.example.pessoa.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 public class Tarefas {
 
     private Integer id;
-    private String nomeTarefa;
-    private String itens;
+    private String descricao;
+    private LocalDateTime dataCriacao;
+    private boolean status;
 
 }

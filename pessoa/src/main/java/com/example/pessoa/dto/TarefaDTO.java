@@ -3,10 +3,14 @@ package com.example.pessoa.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Data
 public class TarefaDTO {
-    private String nomeTarefa;
-    private String itens;
+    private Integer id;
+    private String descricao;
+    private LocalDateTime dataCriacao;
+    private boolean status;
 
 }
