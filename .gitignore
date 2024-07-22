@@ -1,0 +1,8 @@
+# Exclui arquivos e pastas específicos do IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Exclui pastas de output
+out/
