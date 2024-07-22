@@ -1,4 +1,12 @@
 package com.example.pessoa.dto;
 
-public class TarefaDTO extends TarefaCreateDTO{
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
+public class TarefaDTO {
+    private String nomeTarefa;
+    private String itens;
+
 }
