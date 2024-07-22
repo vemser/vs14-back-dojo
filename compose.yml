@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  bd-oracle:
+    container_name: bd-oracle
+    image: epiclabs/docker-oracle-xe-11g
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_PASSWORD=oracle
+    volumes:
+      - ./oracle:/u01/app/oracle
+    restart: unless-stopped
