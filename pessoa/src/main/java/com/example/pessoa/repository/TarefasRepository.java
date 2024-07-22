@@ -2,6 +2,7 @@ package com.example.pessoa.repository;
 
 import com.example.pessoa.entity.Tarefas;
 import com.example.pessoa.exceptions.BDException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -9,12 +10,18 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class TarefasRepository implements com.example.pessoa.repository.Repository<Integer, Tarefas> {
 
-    private final Connection connection;
+    private final DataBaseConnection connection;
+
+    public TarefasRepository(DataBaseConnection connection) {
+        this.connection = connection;
+    }
 
     @Override
     public Tarefas adicionar(Tarefas tarefas) throws SQLException {
+
     }
 
     @Override

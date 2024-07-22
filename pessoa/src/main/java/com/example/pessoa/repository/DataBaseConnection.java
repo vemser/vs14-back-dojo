@@ -2,6 +2,7 @@ package com.example.pessoa.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
@@ -20,9 +21,10 @@ public class DataBaseConnection {
     @Value("${spring.datasource.password}")
     private String password;
 
+    @Bean
     public Connection getConnection() throws Exception {
         Connection connection = DriverManager.getConnection(url, user, password );
-        log.info("Conexão bem-sucedida");
+        //log.info("Conexão bem-sucedida");
         return connection;
     }
 }
