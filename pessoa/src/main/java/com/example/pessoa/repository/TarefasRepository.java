@@ -11,14 +11,10 @@ import java.util.List;
 @Repository
 public class TarefasRepository implements com.example.pessoa.repository.Repository<Integer, Tarefas> {
 
+    private final Connection connection;
 
     @Override
     public Tarefas adicionar(Tarefas tarefas) throws SQLException {
-        try (Connection con = DataBaseConnection.getConnection()) {
-
-        } catch (SQLException e) {
-            throw new BDException(e.getCause());
-        }
     }
 
     @Override
