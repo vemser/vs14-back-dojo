@@ -50,7 +50,7 @@ public class Armazem {
     }
 
     public void removerProdutoPorCategoria(TipoProduto tipoProduto) throws Exception {
-
+        produtos.remove()
     }
 
 

@@ -98,11 +98,11 @@ class ArmazemTest {
 
         armazem.removerProdutoPorCategoria(categoriaParaRemover);
 
-        armazem.getProdutos().stream()
+        List<Produto> produtos = armazem.getProdutos().stream()
                 .filter(produto -> produto.getTipo().equals(categoriaParaRemover))
                 .toList();
 
-        assertTrue(armazem.getProdutos().isEmpty());
+        assertTrue(produtos.isEmpty());
 
 
     }
