@@ -1,25 +1,30 @@
 package br.com.dbc.vemser.aula_01_testes;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Calculadora {
 
     public double somar(double a, double b) {
         return a + b;
     }
 
-    public double subtrair(double a, double b) {
-        return a - b;
+    public double subtrair(double n1, double n2) {
+        return n1 - n2;
     }
 
     public double multiplicar(double a, double b) {
         return a * b;
     }
 
-    public double dividir(double a, double b) throws ArithmeticException {
+    public BigDecimal dividir(double a, double b) throws ArithmeticException {
         if (b == 0) {
             throw new ArithmeticException("Divisão por zero não é permitida.");
         }
 
-        return a / b;
+        BigDecimal resultado = new BigDecimal(a / b).setScale(2, RoundingMode.HALF_EVEN);
+
+        return resultado;
     }
 
     public double raizQuadrada(double a) throws IllegalArgumentException {
