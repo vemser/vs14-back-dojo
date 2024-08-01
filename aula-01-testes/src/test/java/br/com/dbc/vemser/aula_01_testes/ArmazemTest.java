@@ -76,13 +76,13 @@ class ArmazemTest {
 
     @Test
     void deveRetornarUmProdutoPeloId() throws Exception {
-
-
         Integer idProduto = 1;
 
-        armazem.buscarProdutoPorId(idProduto);
-
-        assertEquals(armazem.getProdutos().);
+        Produto produto = armazem.buscarProdutoPorId(idProduto);
+        assertTrue(armazem.getProdutos().contains(produto));
     }
+
+    @Test
+    void f
 
 }
