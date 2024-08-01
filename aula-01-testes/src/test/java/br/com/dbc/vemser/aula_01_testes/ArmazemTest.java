@@ -38,4 +38,21 @@ class ArmazemTest {
         assertEquals("Barra de cereal", armazem.getProdutos().get(armazem.getProdutos().size() - 1).getNome());
         assertTrue(armazem.getProdutos().contains(produtoParaAdicioanar));
     }
+
+    @Test
+    void deveAlterarUmProdutoComSucesso() throws Exception {
+        //Arrange
+        Produto produtoParaAlterar = new Produto(1, "Barra de cereal", 0.1, StatusProduto.ATIVO, TipoProduto.ALIMENTO);
+
+        //Act
+        Produto produto = armazem.alterarProduto(1, produtoParaAlterar);
+
+        //Assert
+//        assertEquals(4, armazem.getProdutos().size());
+        assertEquals("Barra de cereal", armazem.getProdutos().get(0).getNome());
+        assertEquals(0.1, armazem.getProdutos().get(0).getPeso());
+        assertEquals(StatusProduto.ATIVO, armazem.getProdutos().get(0).getStatus());
+        assertEquals(TipoProduto.ALIMENTO, armazem.getProdutos().get(0).getTipo());
+        assertTrue(armazem.getProdutos().contains(produtoParaAlterar));
+    }
 }
