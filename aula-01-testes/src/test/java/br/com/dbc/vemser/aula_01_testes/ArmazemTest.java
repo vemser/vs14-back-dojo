@@ -83,6 +83,12 @@ class ArmazemTest {
     }
 
     @Test
-    void f
+    void deveFecharArmazemEDesativarTodosOsProdutos() throws Exception {
 
+        armazem.fecharArmazem();
+
+        for (Produto produto : armazem.getProdutos()) {
+            assertEquals(StatusProduto.INATIVO, produto.getStatus());
+        }
+    }
 }

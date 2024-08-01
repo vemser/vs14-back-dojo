@@ -42,4 +42,10 @@ public class Armazem {
 
         return produtoEncontrado;
     }
+
+    public void fecharArmazem(){
+        for (Produto produto : produtos){
+            produto.setStatus(StatusProduto.INATIVO);
+        }
+    }
 }
