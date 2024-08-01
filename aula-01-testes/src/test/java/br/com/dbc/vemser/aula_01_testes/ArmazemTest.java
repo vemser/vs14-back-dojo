@@ -91,4 +91,13 @@ class ArmazemTest {
             assertEquals(StatusProduto.INATIVO, produto.getStatus());
         }
     }
+
+    @Test
+    void removerPorCategoria(){
+        TipoProduto categoriaParaRemover = TipoProduto.ALIMENTO;
+
+        armazem.removerProdutoPorCategoria(categoriaParaRemover);
+
+
+    }
 }

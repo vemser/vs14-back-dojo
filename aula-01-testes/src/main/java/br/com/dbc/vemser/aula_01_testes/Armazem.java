@@ -48,4 +48,6 @@ public class Armazem {
             produto.setStatus(StatusProduto.INATIVO);
         }
     }
+
+
 }
