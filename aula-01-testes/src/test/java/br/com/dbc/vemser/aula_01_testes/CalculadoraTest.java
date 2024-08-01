@@ -118,4 +118,30 @@ class CalculadoraTest {
         assertThrows(ArithmeticException.class, () -> calculadora.dividir(n1, n2));
     }
 
+    @Test
+    void deveCalcularPotenciaDeDosNumerosPositios() {
+        //Arrange
+        double base = 2;
+        double expoente = 3;
+
+        //Act
+        double resultado = calculadora.potencia(base, expoente);
+
+        //Assert
+        assertEquals(8, resultado);
+    }
+
+    @Test
+    void deveCalcularPotenciaDezero(){
+        //Arrange
+        double base = 2;
+        double expoente = 0;
+
+        //Act
+        double resultado = calculadora.potencia(base, expoente);
+
+        //Assert
+        assertEquals(8, resultado);
+
+    }
 }
