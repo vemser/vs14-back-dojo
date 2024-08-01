@@ -36,5 +36,6 @@ class ArmazemTest {
         //Assert
         assertEquals(4, armazem.getProdutos().size());
         assertEquals("Barra de cereal", armazem.getProdutos().get(armazem.getProdutos().size() - 1).getNome());
+        assertTrue(armazem.getProdutos().contains(produtoParaAdicioanar));
     }
 }

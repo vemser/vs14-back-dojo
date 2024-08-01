@@ -176,14 +176,9 @@ class CalculadoraTest {
         //Arrange
         double valorNegativo = -1;
 
-        //Act
-        double resultado = calculadora.raizQuadrada(base);
-
         //Assert
-//        assertThrows()
+        assertThrows(IllegalArgumentException.class, () -> calculadora.raizQuadrada(valorNegativo));
 
     }
-
-
 
 }
