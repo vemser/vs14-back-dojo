@@ -93,7 +93,7 @@ class ArmazemTest {
     }
 
     @Test
-    void removerPorCategoria(){
+    void removerPorCategoria() throws Exception {
         TipoProduto categoriaParaRemover = TipoProduto.ALIMENTO;
 
         armazem.removerProdutoPorCategoria(categoriaParaRemover);

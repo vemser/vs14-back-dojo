@@ -50,7 +50,13 @@ public class Armazem {
     }
 
     public void removerProdutoPorCategoria(TipoProduto tipoProduto) throws Exception {
-        produtos.remove()
+        List<Produto> produtos1 = produtos.stream()
+                .filter(produto -> produto.getTipo().equals(tipoProduto))
+                .toList();
+
+        for (Produto produto : produtos1){
+            removerProduto(produto);
+        }
     }
 
 
