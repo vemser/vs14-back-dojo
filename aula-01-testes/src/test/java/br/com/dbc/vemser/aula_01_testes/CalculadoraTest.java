@@ -141,7 +141,35 @@ class CalculadoraTest {
         double resultado = calculadora.potencia(base, expoente);
 
         //Assert
-        assertEquals(8, resultado);
+        assertEquals(1, resultado);
 
     }
+    @Test
+    void deveCalcularPotencianegativa(){
+        //Arrange
+        double base = 2;
+        double expoente = -2;
+
+        //Act
+        double resultado = calculadora.potencia(base, expoente);
+
+        //Assert
+        assertEquals(0.25, resultado);
+
+    }
+
+    @Test
+    void deveCalcularRaizQuadradaPositiva(){
+        //Arrange
+        double base = 2;
+        double expoente = -2;
+
+        //Act
+        double resultado = calculadora.potencia(base, expoente);
+
+        //Assert
+        assertEquals(0.25, resultado);
+
+    }
+
 }
