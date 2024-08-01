@@ -161,15 +161,29 @@ class CalculadoraTest {
     @Test
     void deveCalcularRaizQuadradaPositiva(){
         //Arrange
-        double base = 2;
-        double expoente = -2;
+        double base = 25;
 
         //Act
-        double resultado = calculadora.potencia(base, expoente);
+        double resultado = calculadora.raizQuadrada(base);
 
         //Assert
-        assertEquals(0.25, resultado);
+        assertEquals(5, resultado);
 
     }
+
+    @Test
+    void deveLancarUmExceptionEmCasoDeNumeroNegativo(){
+        //Arrange
+        double valorNegativo = -1;
+
+        //Act
+        double resultado = calculadora.raizQuadrada(base);
+
+        //Assert
+//        assertThrows()
+
+    }
+
+
 
 }
