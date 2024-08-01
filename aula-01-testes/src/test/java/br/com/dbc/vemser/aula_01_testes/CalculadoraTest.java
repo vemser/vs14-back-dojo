@@ -87,7 +87,7 @@ class CalculadoraTest {
 
         BigDecimal resultado = calculadora.dividir(n1, n2);
 
-        assertEquals(3, resultado);
+        assertEquals(3, resultado.doubleValue());
     }
 
     @Test
