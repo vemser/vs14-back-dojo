@@ -71,7 +71,18 @@ class ArmazemTest {
 
         armazem.removerProduto(produtoRemover);
 
-//        assertEquals(tamanhol-1, );
-        
+        assertEquals(armazem.getProdutos().size(), tamanhoLista-1);
     }
+
+    @Test
+    void deveRetornarUmProdutoPeloId() throws Exception {
+
+
+        Integer idProduto = 1;
+
+        armazem.buscarProdutoPorId(idProduto);
+
+        assertEquals(armazem.getProdutos().);
+    }
+
 }
