@@ -4,8 +4,10 @@ import br.com.dbc.vemser.pessoaapi.dto.EnderecoDTO;
 import br.com.dbc.vemser.pessoaapi.dto.PageDTO;
 import br.com.dbc.vemser.pessoaapi.dto.PessoaDTO;
 import br.com.dbc.vemser.pessoaapi.entity.Endereco;
+import br.com.dbc.vemser.pessoaapi.entity.Pessoa;
 import br.com.dbc.vemser.pessoaapi.exceptions.RegraDeNegocioException;
 import br.com.dbc.vemser.pessoaapi.mocks.EnderecoMock;
+import br.com.dbc.vemser.pessoaapi.mocks.PessoaMock;
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,12 +39,17 @@ class EnderecoServiceTest {
     private ObjectMapper objectMapper;
 
     private EnderecoMock enderecoMock;
+    @Mock
+    private PessoaService pessoaService;
+
+    private PessoaMock pessoaMock
 
 //    private EnderecoMock enderecoMock;
 
     @BeforeEach
     public void setUp(){
         enderecoMock = new EnderecoMock();
+        pessoaMock = new PessoaMock();
         ReflectionTestUtils.setField(enderecoService, "objectMapper", getObjectMapperInstance());
     }
 
@@ -51,7 +58,7 @@ class EnderecoServiceTest {
 
         Integer pagina = 0;
         Integer tamanho = 10;
-        String filter = "idEndereco";
+
 
         List<Endereco> enderecosMocks = List.of(
                 enderecoMock.retornarEnderecoEntity(1),
@@ -89,7 +96,7 @@ class EnderecoServiceTest {
 
         Integer pagina = 0;
         Integer tamanho = 10;
-        String filter = "idEndereco";
+
 
         List<Endereco> enderecosMocks = new ArrayList<>();
 
@@ -99,6 +106,15 @@ class EnderecoServiceTest {
         when(enderecoRepository.findAll(pageable)).thenReturn(pageEndereco);
 
         assertThrows(RegraDeNegocioException.class, () -> enderecoService.listarPaginado(pagina, tamanho));
+    }
+
+    @Test
+    void deveCriarUmEnderecoComSucesso(){
+        Pessoa pessoaRelacionada = pessoaMock.retornarPessoaEntity(1);
+
+
+
+
     }
 
 
