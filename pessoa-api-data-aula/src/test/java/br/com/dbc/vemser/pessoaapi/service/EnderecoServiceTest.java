@@ -28,10 +28,13 @@ class EnderecoServiceTest {
     @Mock
     private ObjectMapper objectMapper;
 
+    private EnderecoMock enderecoMock;
+
 //    private EnderecoMock enderecoMock;
 
     @BeforeEach
     public void setUp(){
+        enderecoMock = new EnderecoMock();
         ReflectionTestUtils.setField(enderecoService, "objectMapper", getObjectMapperInstance());
     }
 
@@ -42,7 +45,9 @@ class EnderecoServiceTest {
         Integer tamanho = 10;
         String filter = "idEndereco";
 
-        List<Endereco> enderecosMocks = List.of();
+        List<Endereco> enderecosMocks = List.of(
+                enderecoMock.retorna
+        );
 
 
 

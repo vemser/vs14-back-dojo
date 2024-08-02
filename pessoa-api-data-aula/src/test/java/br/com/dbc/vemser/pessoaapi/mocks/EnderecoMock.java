@@ -8,10 +8,16 @@ public class EnderecoMock {
 
         Endereco endereco = new Endereco();
         endereco.setIdEndereco(numero);
-        endereco.setTipo();
+        endereco.setTipo(1);
         endereco.setLogradouro("Endereco " + numero);
         endereco.setNumero(numero);
-        endereco.setComplemento();
+        endereco.setComplemento("Próximo a escola");
+        endereco.setCep("5858588");
+        endereco.setCidade("Campina Grande");
+        endereco.setEstado("Paraiba");
+        endereco.setPais("Brasil");
+
+        return endereco;
     }
 
 
