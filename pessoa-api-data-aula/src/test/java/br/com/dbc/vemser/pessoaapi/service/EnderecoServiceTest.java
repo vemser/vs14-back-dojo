@@ -20,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.domain.*;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -82,4 +83,23 @@ class EnderecoServiceTest {
 
         return objectMapper;
     }
+
+    @Test
+    void deveRetornarUmaExcessao () throws RegraDeNegocioException {
+
+        Integer pagina = 0;
+        Integer tamanho = 10;
+        String filter = "idEndereco";
+
+        List<Endereco> enderecosMocks = new ArrayList<>();
+
+        Pageable pageable = PageRequest.of(pagina, tamanho, Sort.by("tipo"));
+        Page<Endereco> pageEndereco = new PageImpl<>(enderecosMocks, pageable, enderecosMocks.size());
+
+        when(enderecoRepository.findAll(pageable)).thenReturn(pageEndereco);
+
+        assertThrows(RegraDeNegocioException.class, () -> enderecoService.listarPaginado(pagina, tamanho));
+    }
+
+
 }
