@@ -1,5 +1,6 @@
 package br.com.dbc.vemser.pessoaapi.service;
 
+import br.com.dbc.vemser.pessoaapi.entity.Endereco;
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,8 +36,13 @@ class EnderecoServiceTest {
     }
 
     @Test
-    void testarLeitura () {
+    void deveListarTodosEnderecosPaginadoComSucesso () {
 
+        Integer pagina = 0;
+        Integer tamanho = 10;
+        String filter = "idEndereco";
+
+        List<Endereco> enderecosMocks = List.of();
 
 
 

@@ -62,6 +62,7 @@ public class EnderecoService {
     }
 
     public PageDTO<EnderecoDTO> listarPaginado(Integer pagina, Integer tamanho) throws RegraDeNegocioException {
+
         Pageable pageable = PageRequest.of(pagina, tamanho, Sort.by("tipo"));
         Page<Endereco> enderecos = enderecoRepository.findAll(pageable);
 
