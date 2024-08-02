@@ -1,6 +1,7 @@
 package br.com.dbc.vemser.pessoaapi.service;
 
 import br.com.dbc.vemser.pessoaapi.entity.Endereco;
+import br.com.dbc.vemser.pessoaapi.mocks.EnderecoMock;
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,6 +13,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
@@ -46,8 +51,14 @@ class EnderecoServiceTest {
         String filter = "idEndereco";
 
         List<Endereco> enderecosMocks = List.of(
-                enderecoMock.retorna
+                enderecoMock.retornarEnderecoEntity(1),
+                enderecoMock.retornarEnderecoEntity(2),
+                enderecoMock.retornarEnderecoEntity(3)
         );
+
+        Pageable pageable = PageRequest.of(pagina, tamanho, Sort.by("tipo"));
+        Page<Endereco> pageEndereco = new 
+
 
 
 
