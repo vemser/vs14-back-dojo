@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+        <changeSet id="1" author="rafael.ramos">
+            <sql dbms="oracle">
+                CREATE TABLE TESTE (
+                    id NUMBER NOT NULL,
+                    nome VARCHAR2(255) NOT NULL,
+                    primary key(id)
+                );
+            </sql>
+        </changeSet>
+
+        <changeSet id="2" author="rafael.ramos">
+            <sql dbms="oracle">
+                INSERT INTO TESTE VALUES(1, 'Rafael');
+                INSERT INTO TESTE VALUES(2, 'Cris');
+            </sql>
+        </changeSet>
+</databaseChangeLog>
