@@ -1,6 +1,10 @@
 package br.com.dbc.vemser.pessoaapi.service;
 
+import br.com.dbc.vemser.pessoaapi.dto.EnderecoDTO;
+import br.com.dbc.vemser.pessoaapi.dto.PageDTO;
+import br.com.dbc.vemser.pessoaapi.dto.PessoaDTO;
 import br.com.dbc.vemser.pessoaapi.entity.Endereco;
+import br.com.dbc.vemser.pessoaapi.exceptions.RegraDeNegocioException;
 import br.com.dbc.vemser.pessoaapi.mocks.EnderecoMock;
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -13,15 +17,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class EnderecoServiceTest {
@@ -44,7 +46,7 @@ class EnderecoServiceTest {
     }
 
     @Test
-    void deveListarTodosEnderecosPaginadoComSucesso () {
+    void deveListarTodosEnderecosPaginadoComSucesso () throws RegraDeNegocioException {
 
         Integer pagina = 0;
         Integer tamanho = 10;
@@ -57,7 +59,14 @@ class EnderecoServiceTest {
         );
 
         Pageable pageable = PageRequest.of(pagina, tamanho, Sort.by("tipo"));
-        Page<Endereco> pageEndereco = new 
+        Page<Endereco> pageEndereco = new PageImpl<>(enderecosMocks, pageable, enderecosMocks.size());
+
+        when(enderecoRepository.findAll(pageable)).thenReturn(pageEndereco);
+
+        PageDTO<EnderecoDTO> resultadoPaginaDTO = enderecoService.listarPaginado(pagina, tamanho);
+
+
+
 
 
 
