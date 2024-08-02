@@ -1,12 +1,17 @@
 package br.com.dbc.vemser.pessoaapi.service;
 
 import br.com.dbc.vemser.pessoaapi.repository.EnderecoRepository;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -20,11 +25,34 @@ class EnderecoServiceTest {
     @Mock
     private ObjectMapper objectMapper;
 
-    private EnderecoMock enderecoMock
+//    private EnderecoMock enderecoMock;
 
     @BeforeEach
     public void setUp(){
+        ReflectionTestUtils.setField(enderecoService, "objectMapper", getObjectMapperInstance());
+    }
+
+    @Test
+    void testarLeitura () {
+
+
+
+
+
+
 
     }
 
+
+
+    public static ObjectMapper getObjectMapperInstance() {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        objectMapper.registerModule(new JavaTimeModule());
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+        return objectMapper;
+    }
 }
