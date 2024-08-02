@@ -22,7 +22,7 @@ public class EnderecoMock {
         return endereco;
     }
 
-    public EnderecoDTO retornarEnderecoEntity(Integer numero) {
+    public EnderecoDTO retornarEnderecoDTO(Integer numero) {
 
         EnderecoDTO endereco = new EnderecoDTO();
         endereco.setIdEndereco(numero);

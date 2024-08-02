@@ -65,15 +65,9 @@ class EnderecoServiceTest {
 
         PageDTO<EnderecoDTO> resultadoPaginaDTO = enderecoService.listarPaginado(pagina, tamanho);
 
-
-
-
-
-
-
-
-
-
+        assertNotNull(resultadoPaginaDTO);
+        assertEquals(pagina, resultadoPaginaDTO.getPage());
+        assertEquals(3, resultadoPaginaDTO.getContent().size());
     }
 
 
