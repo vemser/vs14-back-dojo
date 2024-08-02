@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -157,7 +158,7 @@ public class PessoaService {
         return pessoas;
     }
 
-    public PessoaDTO create(PessoaCreateDTO pessoaCreateDTO) throws RegraDeNegocioException {
+    public PessoaDTO create(PessoaCreateDTO pessoaCreateDTO)  {
         Pessoa pessoaEntidade = objectMapper.convertValue(pessoaCreateDTO, Pessoa.class);
         Pessoa pessoaSalva = pessoaRepository.save(pessoaEntidade);
         //emailService.sendEmailCadastroPessoa(pessoaDTO);
