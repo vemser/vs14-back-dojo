@@ -24,3 +24,13 @@
     padding: 12px 31px;
     font-weight: 700;
 }
+
+.imagem{
+    width: 502px;
+    height: 502px;
+    border-radius: 20px;
+}
+
+.main-container{
+    display: flex;
+}
