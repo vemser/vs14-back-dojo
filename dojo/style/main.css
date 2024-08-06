@@ -33,4 +33,18 @@
 
 .main-container{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
+}
+
+h1 {
+    font-family: Quicksand, sans-serif;
+    font-size: 3rem;
+    color: var(--black);
 }
