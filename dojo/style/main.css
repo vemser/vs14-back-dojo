@@ -1,4 +1,14 @@
-.container-header{
+.container-header {
+    display: flex;
     width: 100vw;
-    
+    padding: 24px 100px;
+    justify-content: space-between;
+}
+
+.navigation-header {
+    display: flex;
+}
+
+.navigation-header a {
+    color: var(--primary);
 }
