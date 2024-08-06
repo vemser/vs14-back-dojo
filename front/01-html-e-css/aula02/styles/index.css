@@ -1,0 +1,150 @@
+h1 {
+  color: var(--primary);
+}
+
+/* .subtitle {
+  color: green;
+}
+
+.subtitle.custom {
+  color: brown;
+} */
+
+/* h2 {
+  color: blue;
+} */
+
+.header-container { 
+  width: 100%;
+  /* position: fixed;
+  top: 0; */
+  padding: 8px 24px;
+  background-color: var(--secondary);
+  color: white;
+}
+
+.header-container a {
+  color: white;
+}
+
+.page-container {
+  max-width: 80%;  
+  margin: 0 auto;
+}
+
+.button {
+  padding: 8px 4px;
+  border-radius: 4px;
+  border-radius: 4px;
+  background-color: var(--secondary);
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #e02121;
+}
+
+/* .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+} */
+
+.button[type="submit"] {
+  margin-left: 10px;
+  background-color: var(--primary);
+}
+.button[type="submit"]:hover {
+  background-color: var(--accent);
+}
+
+.square {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 4px;
+  border: 1px solid red;
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+}
+
+/* .square.content-box {
+  box-sizing: content-box;
+} */
+
+/* .button.absolute {
+  position: absolute;
+  right: 12px;
+  top: 100px
+} */
+
+.balloon-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: var(--primary);
+}   
+
+.balloon-badge {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 100%;
+  background-color: var(--secondary);
+  border: 2px solid white
+}
+
+.list-container li {
+  list-style: none;
+}
+
+.list-container li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 4px   ;
+  border-radius: 100%;
+  background-color: var(--accent);
+}
+
+.input-custom::placeholder {
+  color: var(--accent);
+}
+
+.input-custom:focus {
+  outline: 2px solid var(--accent);
+}
+
+.absolute-text {
+  font-size: 20px;
+}
+
+.relative-text {
+  font-size: 2rem;
+}
+
+.full-height-section {
+  height: 100vh;
+  background-color: var(--secondary); 
+}
+
+.section-custom {
+  margin: 20px 0;
+}
+
+.div-1 {
+  width: 500px;
+  height: 20px;
+  background-color: brown;
+}
+
+.div-2 {
+  width: 50%;
+  height: 20px;
+  background-color: greenyellow;
+}
