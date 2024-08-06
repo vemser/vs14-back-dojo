@@ -12,3 +12,15 @@
 .navigation-header a {
     color: var(--primary);
 }
+
+.navigation-header .nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.navigation-header .nav-list .btn-nav {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 31px;
+    font-weight: 700;
+}
