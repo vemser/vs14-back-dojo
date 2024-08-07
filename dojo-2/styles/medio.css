@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: grid;
+    grid-template-areas: "primario" "secundario"
+    "primario" "terciario";
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 70%;
+    height: 100vh;
+    gap: 20px;
+}
+
+.main-container div{
+    background-color: blue;
+    width: 45%;
+    height: 30%;
+}
+
+.primario{
+    grid-area: primario;
+    height: 60%;
+}
+
+.secundario{
+    grid-area: secundario;
+}
+
+.terciario{
+    grid-area: terciario;
+}
