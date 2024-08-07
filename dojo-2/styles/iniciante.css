@@ -9,7 +9,8 @@ body {
     gap: 5%;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    height: 100%;
 }
 
 .flex-item {
