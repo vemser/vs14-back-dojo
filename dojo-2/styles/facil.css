@@ -6,17 +6,19 @@
 
 .main-container {
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
+    justify-content: space-around;
+    margin: 5rem auto;
     width: 80vw;
     height: 100vh;
-    background-color: brown;
+    gap: 20px;
+
 }
 
 .container {
-    width: 500px;
-    height: 300px;
+    width: 535px;
+    height: 320px;
     background-color: blue;
+    flex-grow: 1;
 }
 
 aside {
